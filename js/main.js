@@ -144,3 +144,11 @@ generateBtn.addEventListener("click", () => {
     copyPasword.firstElementChild.style.color = "#E6E5EA";
   }
 });
+
+const btnCopy = document.querySelector(".btnCopy");
+btnCopy.addEventListener("click", () => {
+  let text = copyPasword.firstElementChild.innerText;
+  if (text !== "") {
+    navigator.clipboard.writeText(text);
+  }
+});
