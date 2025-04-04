@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+body {
+  font-family: "JetBrains Mono", monospace;
+  background: rgba(8, 7, 11, 1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.continer {
+  margin: 0 16px;
+  width: 100%;
+  max-width: 540px;
+  position: relative;
+  .title {
+    position: absolute;
+    top: -64px;
+    left: 0;
+    right: 0;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: rgba(129, 125, 146, 1);
+  }
+  .copyPasword {
+    padding: 19px 32px;
+    margin-bottom: 24px;
+    background-color: rgba(36, 35, 44, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .password {
+      font-weight: 700;
+      font-size: 32px;
+      color: rgba(230, 229, 234, 0.25);
+      transition: 0.2s;
+    }
+    .btnCopy {
+      path {
+        transition: 0.4s;
+      }
+      &:hover {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+  .sittings {
+    padding: 24px 32px 32px;
+    background: rgba(36, 35, 44, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .password-lenght {
+      .lenghtInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        h4 {
+          font-weight: 700;
+          font-size: 18px;
+          color: rgba(230, 229, 234, 1);
+        }
+        h3 {
+          font-weight: 700;
+          font-size: 32px;
+          color: rgba(164, 255, 175, 1);
+        }
+      }
+      .lenghtSittings {
+        cursor: pointer;
+        appearance: none;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(
+          90deg,
+          rgba(164, 255, 175, 1) 0 0,
+          #18171f 0 100%
+        );
+        border-radius: 4px;
+        &::-webkit-slider-thumb {
+          appearance: none;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: white;
+          transition: 0.4s;
+          &:hover {
+            background: #18171f;
+            border: 2px solid #a4ffaf;
+          }
+        }
+      }
+    }
+    .sittings-checkboxs {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+      .label-text {
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 18px;
+        color: rgba(230, 229, 234, 1);
+        position: relative;
+        display: flex;
+        align-items: start;
+        gap: 24px;
+        .check-box {
+          flex: 1 0 20px;
+          position: relative;
+          width: 20px;
+          height: 20px;
+          border: 2px solid rgba(230, 229, 234, 1);
+          transition: 0.4s;
+          &::after {
+            content: "";
+            height: 10px;
+            width: 5px;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            transform-origin: left bottom;
+            rotate: 45deg;
+            position: absolute;
+            bottom: 8px;
+            left: 1px;
+            opacity: 0;
+            transition: 0.4s;
+          }
+          &:hover {
+            border-color: rgba(164, 255, 175, 1);
+          }
+        }
+        input {
+          position: absolute;
+          opacity: 0;
+          right: 0;
+          &:checked ~ .check-box {
+            background: rgba(164, 255, 175, 1);
+            border-color: rgba(164, 255, 175, 1);
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .strength {
+      height: 72px;
+      background: rgba(24, 23, 31, 1);
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .strength-title {
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+        color: rgba(129, 125, 146, 1);
+      }
+      .level {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        .level-text {
+          font-weight: 700;
+          font-size: 24px;
+          text-transform: uppercase;
+          color: rgba(230, 229, 234, 1);
+        }
+        .includer {
+          display: flex;
+          gap: 8px;
+          span {
+            height: 28px;
+            width: 10px;
+            border: 2px solid rgba(230, 229, 234, 1);
+            transition: 0.4s;
+          }
+          .v0 {
+            border-color: rgba(230, 229, 234, 1);
+            background: transparent;
+          }
+          .v1 {
+            border-color: #f64a4a;
+            background: #f64a4a;
+          }
+          .v2 {
+            border-color: #fb7c58;
+            background: #fb7c58;
+          }
+          .v3 {
+            border-color: #f8cd65;
+            background: #f8cd65;
+          }
+          .v4 {
+            border-color: #a4ffaf;
+            background: #a4ffaf;
+          }
+        }
+      }
+    }
+    .generateBtn {
+      border: 2px solid rgba(164, 255, 175, 1);
+      padding: 19px 0;
+      background-color: rgba(164, 255, 175, 1);
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 18px;
+      color: rgba(36, 35, 44, 1);
+      transition: 0.4s;
+      path {
+        transition: 0.4s;
+      }
+      &:hover {
+        color: rgba(164, 255, 175, 1);
+        background-color: rgba(36, 35, 44, 1);
+
+        path {
+          fill: rgba(164, 255, 175, 1);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 476px) {
+  .continer {
+    .title {
+      top: -32px;
+      font-size: 16px;
+    }
+    .copyPasword {
+      padding: 16px;
+      margin-bottom: 16px;
+      .password {
+        font-size: 24px;
+      }
+      .btnCopy {
+        svg {
+          width: 17.5px;
+          height: 20px;
+        }
+      }
+    }
+    .sittings {
+      padding: 16px;
+      gap: 16px;
+      .password-lenght {
+        margin-bottom: 16px;
+        .lenghtInfo {
+          margin-bottom: 8px;
+          h4 {
+            font-size: 16px;
+          }
+          h3 {
+            font-size: 24px;
+          }
+        }
+      }
+      .sittings-checkboxs {
+        margin-bottom: 16px;
+        gap: 16px;
+        .label-text {
+          font-size: 16px;
+          gap: 20px;
+        }
+      }
+      .strength {
+        height: 56px;
+        padding: 0 16px;
+        gap: 16px;
+        .strength-title {
+          font-size: 16px;
+        }
+        .level {
+          .level-text {
+            font-size: 18px;
+          }
+        }
+      }
+      .generateBtn {
+        padding: 16px 0;
+        font-size: 16px;
+      }
+    }
+  }
+}
